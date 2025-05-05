@@ -1,0 +1,102 @@
+name: bus_app
+description: "A bus app project."
+publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.7.2
+
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_localizations:
+    sdk: flutter
+
+  cupertino_icons: ^1.0.8
+  hooks_riverpod: ^2.6.1
+  flutter_hooks: ^0.21.2
+  freezed_annotation: ^3.0.0
+  json_annotation: ^4.9.0
+  go_router: ^15.1.1
+  geolocator: ^14.0.0
+  geocoding: ^3.0.0
+  dio: ^5.8.0+1
+  dartz: ^0.10.1
+  shared_preferences: ^2.5.3
+  flutter_secure_storage: ^9.2.4
+  intl: ^0.19.0
+  google_fonts: ^6.2.1
+  package_info_plus: ^8.3.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  flutter_lints: ^5.0.0
+  build_runner: ^2.4.15
+  freezed: ^3.0.6
+  json_serializable: ^6.9.5
+  mockito: ^5.4.6
+  flutter_gen_runner: ^5.10.0
+
+  flutter_flavorizr: ^2.4.0
+
+# Add flavorizr configuration
+flavorizr:
+  app:
+    android:
+      flavorDimensions: "flavor-type"
+  #    ios:
+  flavors:
+    dev:
+      app:
+        name: "BusApp Dev"
+      android:
+        applicationId: "com.movv.bus_app.dev"
+        generateDummyAssets: true
+      ios:
+        bundleId: "com.movv.bus_app.dev"
+        generateDummyAssets: true
+
+    prod:
+      app:
+        name: "BusApp"
+      android:
+        applicationId: "com.movv.bus_app"
+      ios:
+        bundleId: "com.movv.bus_app"
+
+flutter_gen:
+  output: lib/generated/ # Optional (default: lib/gen/)
+
+# Add flutter_intl configuration
+flutter_intl:
+  enabled: true
+  main_locale: en
+  arb_dir: lib/l10n
+  output_dir: lib/generated
+
+flutter:
+
+  uses-material-design: true
+
+  # To add assets to your application, add an assets section, like this:
+  assets:
+     - assets/images/
+     - assets/icons/
+
+  # fonts:
+  #   - family: Schyler
+  #     fonts:
+  #       - asset: fonts/Schyler-Regular.ttf
+  #       - asset: fonts/Schyler-Italic.ttf
+  #         style: italic
+  #   - family: Trajan Pro
+  #     fonts:
+  #       - asset: fonts/TrajanPro.ttf
+  #       - asset: fonts/TrajanPro_Bold.ttf
+  #         weight: 700
+  #
+  # For details regarding fonts from package dependencies,
+  # see https://flutter.dev/to/font-from-package
